@@ -15,13 +15,14 @@ use BitBag\SyliusShippingExportPlugin\Repository\ShippingExportRepositoryInterfa
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Webmozart\Assert\Assert;
 
 final class ShippingExportController extends ResourceController
 {
     /** @var ShippingExportRepositoryInterface */
-    protected $repository;
+    protected RepositoryInterface $repository;
 
     public function exportAllNewShipmentsAction(Request $request): RedirectResponse
     {
